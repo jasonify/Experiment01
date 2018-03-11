@@ -26,6 +26,7 @@ window.onload = function() {
 
         for(var i = 0 ; i < particles.length; i++ ) {
           var p = particles[i];
+          context.strokeStyle="#FFF";
           context.beginPath();
           context.rect(p.position.getX(), p.position.getY(), 10, 10);
           p.update();
@@ -36,24 +37,6 @@ window.onload = function() {
         requestAnimationFrame(update);
       }
 }
-
-
-/*
-var v1 = vector.create(10, 5);
-
-console.log(v1.getX());
-console.log(v1.getY());
-console.log(v1.getAngle());
-console.log(v1.getLength());
-
-v1.setAngle(Math.PI / 6);
-v1.setLength(100);
-
-
-console.log(v1.getX());
-console.log(v1.getY());
-
-*/
 
 var v1 = vector.create(10, 5);
 var v2 = vector.create(3, 4);
