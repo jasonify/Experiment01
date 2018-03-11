@@ -36,12 +36,25 @@ window.onload = function() {
         context.restore();
         requestAnimationFrame(update);
       }
+
+  var v1 = vector.create(10, 5);
+  var v2 = vector.create(3, 4);
+  var v3 = v1.add(v2);
+
+  console.log(v3.getX(), v3.getY());
+  v1.addTo(v2);
+  console.log(v1.getX(), v1.getY());
+
+  var onClick = function() {
+        particles = [];
+        for(var i = 0 ; i < 100; i++) {
+          var p = particle.create(width/2, height/2, Math.random() * 5, Math.random() * Math.PI* 2);
+          particles.push(p);
+        }
+  }
+
+  document.getElementById("canvas").addEventListener("click", function(){
+    onClick();
+  });
+
 }
-
-var v1 = vector.create(10, 5);
-var v2 = vector.create(3, 4);
-var v3 = v1.add(v2);
-
-console.log(v3.getX(), v3.getY());
-v1.addTo(v2);
-console.log(v1.getX(), v1.getY());
